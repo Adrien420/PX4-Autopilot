@@ -1,4 +1,4 @@
-# Arming check request
+# Arming check request.
 #
 # Broadcast message to request arming checks be reported by all registered components, such as internal and external modes.
 # An ArmingCheckReply response should be published by all registered components.
@@ -6,6 +6,6 @@
 
 uint32 MESSAGE_VERSION = 0
 
-uint64 timestamp # Time since system start [us]
+uint64 timestamp # [us] Time since system start.
 
 uint8 request_id # Id of this request. Allows correlation with associated ArmingCheckReply messages.
