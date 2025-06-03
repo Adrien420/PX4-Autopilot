@@ -103,6 +103,7 @@ if(gazebo_FOUND)
 		typhoon_h480
 		uuv_bluerov2_heavy
 		uuv_hippocampus
+		x500
 	)
 
 	set(worlds
@@ -169,7 +170,8 @@ if(gazebo_FOUND)
 			endforeach()
 
 			if(gazebo-classic_airframe_found)
-				#message(STATUS "gazebo-classic model: ${model} (${airframe_model_only}), airframe: ${gazebo-classic_airframe_found}, SYS_AUTOSTART: ${airframe_sys_autostart}")
+				message(STATUS "gazebo-classic model: ${model} (${airframe_model_only}), airframe: ${gazebo-classic_airframe_found}, SYS_AUTOSTART: ${airframe_sys_autostart}")
+				px4_add_board_cmake_build_target(px4_sitl gz_${model})
 			else()
 				message(WARNING "gazebo-classic missing model: ${model} (${airframe_model_only}), airframe: ${gazebo-classic_airframe_found}, SYS_AUTOSTART: ${airframe_sys_autostart}")
 			endif()
